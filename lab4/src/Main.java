@@ -12,9 +12,6 @@ public class Main {
 	    Pitachok pit = new Pitachok("Пятачок", Moodes.Нету,"Играет");
 	    Crolik crol = new Crolik("Кролик",Moodes.Нету,"Играет");
 	    CroskaRu crosh = new CroskaRu("Крошка Ру",Moodes.Нету,"Играет");
-	    puh.learntoplay(pit);
-		puh.learntoplay(crol);
-		puh.learntoplay(crosh);
 	    pustiak.PlayerAdd(puh);
 	    pustiak.PlayerAdd(pit);
 		pustiak.PlayerAdd(crol);
@@ -34,6 +31,14 @@ public class Main {
 				System.out.println(" ");
 			}
 		};
+		try {
+			puh.learntoplay(pit);
+			puh.learntoplay(crol);
+			puh.learntoplay(crosh);
+		}
+		catch(NoPlayException noPlayException){
+			System.out.println(noPlayException.getMessage());
+		}
 		ia.setName("Иа-Иа");
 		ia.setState("Плывет по реке под мостом");
 		ia.getmove();
